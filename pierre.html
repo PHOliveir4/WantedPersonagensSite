@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pierre (Ficha)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="images/token1.png" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top, #120f1f, #010708);
+        }
+
+        .font-epic {
+            font-family: 'Cinzel', serif;
+        }
+
+        .glass {
+            background: rgba(10, 24, 30, 0.65);
+            backdrop-filter: blur(12px);
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 25px rgba(85, 169, 247, 0.6);
+            transform: scale(1.02);
+        }
+
+        .skill-desc {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover .skill-desc {
+            opacity: 1;
+            max-height: 300px;
+            margin-top: 0.5rem;
+        }
+
+        .stat-btn {
+            width: 26px;
+            height: 26px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .stat-btn:hover {
+            background: rgba(85, 144, 247, 0.4);
+        }
+    </style>
+</head>
+
+<body class="text-gray-200 p-6">
+
+    <a href="index.html" class="token fixed top-6 left-6 z-50 w-12 h-12 rounded-full glass 
+          flex items-center justify-center text-xl text-blue-300 glow-hover">
+        <
+    </a>
+
+
+    <!-- ================= TOPO ================= -->
+    <section class="max-w-6xl mx-auto mb-10">
+        <div class="glass rounded-2xl p-6 shadow-2xl glow-hover">
+
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="w-32 h-32 rounded-xl flex items-center justify-center text-sm">
+                    <img src="images/token1.png" alt="">
+                </div>
+
+                <div class="flex-1">
+                    <h1 class="font-epic text-4xl text-blue-300">Pierre Lumier</h1>
+                    <p class="text-sm text-gray-400">
+                        Artificial Ciborgue • Francês • 19 Anos • Arruínado • Nível 5
+                    </p>
+
+                    <!-- Descrição -->
+                    <p class="mt-4 text-sm text-gray-300 leading-relaxed">
+                        Cresceu em um vilarejo pequeno ao sul da França, quando tinha 10 anos, em um dia qualquer, todo
+                        o vilarejo foi teletransportado para o céu, por culpa de um membro da Conclave que estava
+                        testando seus poderes, quando sua vila literalmente caiu do céu, Pierre era o único vivo, mas
+                        sem os dois braços, uma perna e muitos dos seus orgãos, com a chegada de um Agente de Elite no
+                        local, Lee o salvou o transformando em um Ciborgue. Agora, usa suas capacidades pra ajudar Lee,
+                        o homem ao qual ele deve tudo.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= STATUS ================= -->
+    <section class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mb-12">
+
+        <div class="glass rounded-xl p-5 text-center glow-hover">
+            <p class="text-red-400 uppercase text-sm">Vitalidade</p>
+            <div class="flex justify-center items-center gap-2 mt-2">
+                <span class="text-xs text-gray-400">Base 55</span>
+                <div class="stat-btn" onclick="alt('vit',-1)">−</div>
+                <span id="vit" class="text-2xl text-red-300 font-bold">55</span>
+                <div class="stat-btn" onclick="alt('vit',1)">+</div>
+            </div>
+        </div>
+
+        <div class="glass rounded-xl p-5 text-center glow-hover">
+            <p class="text-green-400 uppercase text-sm">Determinação</p>
+            <div class="flex justify-center items-center gap-2 mt-2">
+                <span class="text-xs text-gray-400">Base 7</span>
+                <div class="stat-btn" onclick="alt('det',-1)">−</div>
+                <span id="det" class="text-2xl text-green-300 font-bold">7</span>
+                <div class="stat-btn" onclick="alt('det',1)">+</div>
+            </div>
+        </div>
+
+
+        <div class="glass rounded-xl p-5 text-center glow-hover">
+            <p class="text-cyan-400 uppercase text-sm">Sanidade</p>
+            <div class="flex justify-center items-center gap-2 mt-2">
+                <div class="stat-btn" onclick="alt('san',-1)">−</div>
+                <span id="san" class="text-2xl text-cyan-300 font-bold">0</span>
+                <div class="stat-btn" onclick="alt('san',1)">+</div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= ATRIBUTOS ================= -->
+    <section class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 mb-14">
+
+        <div class="glass p-4 rounded-xl text-center glow-hover">
+            <p class="text-sm uppercase text-gray-400">Corpo</p>
+            <p class="text-2xl text-red-300 font-bold">1</p>
+        </div>
+
+        <div class="glass p-4 rounded-xl text-center glow-hover">
+            <p class="text-sm uppercase text-gray-400">Agilidade</p>
+            <p class="text-2xl text-orange-300 font-bold">3</p>
+        </div>
+
+        <div class="glass p-4 rounded-xl text-center glow-hover">
+            <p class="text-sm uppercase text-gray-400">Mente</p>
+            <p class="text-2xl text-blue-300 font-bold">10</p>
+        </div>
+
+        <div class="glass p-4 rounded-xl text-center glow-hover">
+            <p class="text-sm uppercase text-gray-400">Alma</p>
+            <p class="text-2xl text-green-300 font-bold">4</p>
+        </div>
+
+        <div class="glass p-4 rounded-xl text-center glow-hover">
+            <p class="text-sm uppercase text-gray-400">Ódio</p>
+            <p class="text-2xl text-red-500 font-bold">9</p>
+        </div>
+
+    </section>
+
+    <!-- ================= SEÇÕES ================= -->
+    <section class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+
+        <!-- Função reutilizável -->
+        <div>
+            <h2 class="font-epic text-xl text-cyan-400 mb-3">Habilidades</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-red-300">Invasor Anônimo <b>(Artificial Ciborgue)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Em alcance médio de uma tecnologia, gaste uma <b>ação padrão</b> e tente hackea-lá:,<br>
+                        • <b>Sucesso Menor</b>: Falha, mas ganha
+                        +1 no teste da sua próxima tentativa.<br>
+                        • <b>Sucesso Moderado</b>: O personagem
+                        pode desligar o efeitos da tecnologia
+                        ou servidor por uma rodada.<br>
+                        • <b>Sucesso Maior</b>: O personagem pode
+                        assumir o controle da tecnologia ou
+                        servidor por uma rodada.<br>
+                        • <b>Sucesso Decisivo</b>: O personagem
+                        pode assumir o controle total da
+                        tecnologia ou servidor pelo restante do
+                        conflito
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-cyan-300">Sentidos Aprimorados <b>(Artificial)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Possuí +2 em testes de Percepção ou Investigação, seus sentidos
+                        reforçam sua mente e a protegem, ganhando 1 de Resistência Mental.
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-cyan-300">Regulação de Energia<b> (Artificial)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Quando perder metade
+                        da sua vitalidade, seu corpo se enche de
+                        energia, você escolhe um atributo para
+                        energizar, tendo um dado de vantagem
+                        em todos os testes com esse atributo até
+                        o fim da sessão.
+                        Caso seu personagem recupera a vida, e
+                        ela caia pela metade novamente, ele
+                        adquire +1 uma Vantagem em algum
+                        atributo, podendo até mesmo escolher o
+                        mesmo atributo novamente, e adquirir 2
+                        vantagens, esses efeitos duram até o fim
+                        da sessão. O Limite máximo de vantagens
+                        distribuidas entre os atributos não pode
+                        ser maior que 2.
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-red-500">Criado para Matar <b>(Artificial Máquina)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Possuí +1d4 em todos os seus dados de dano.
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-red-300">Anti-vírus <b>(Artificial Ciborgue)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Você se torna imune
+                        a qualquer invasão, além disso, seu corpo
+                        se protege contra energias que podem lhe
+                        causar mal, ganhando 5 Pontos de
+                        Resistência contra ataques de Superpoderes de Controle.
+
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-cyan-300">Auto-Destruição<b> (Artificial)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Seu corpo cibernético, é avançado, e
+                        carregado com uma função de se autoproteger, quando seu personagem entrar
+                        no estado de Morrendo, você pode
+                        escolher ativar uma Explosão de proteção
+                        (o jogador deve escolher se vai ou não
+                        ativar no mesmo momento que entra no
+                        Morrendo) com uma ação livre, causando
+                        2d12 Pontos de dano em todos os alvos
+                        em alcance Pessoal e Curto, seu
+                        personagem não é afetado por esse dano.
+                        Agora, caso seu personagem venha a
+                        morrer, vai se iniciar uma Auto-destruição
+                        completa, algo que vai consumir toda sua
+                        energia, causando 5d12 Pontos de dano
+                        em todos do combate.
+
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-epic text-xl text-cyan-400 mb-3">Talentos/Talentos Cibernéticos</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-green-300">Vontade de Ferro</h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Sua mente já passou por muita coisa,
+                        você tem mais ciência e resistência do
+                        que os outros, sempre que for sofrer
+                        perda de <b>Sanidade</b> ou for alvo de um
+                        poder do tipo <b>Mental</b>, rode 1d6, se o
+                        resultado for 5 ou 6, sua mente
+                        despedaça todo esse mal e prevalece
+                        sem nenhuma perda.
+
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-blue-300">Sommelier de Armas</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Você é um fanático por armas, você as
+                        ama de verdade e entende sobre elas,
+                        escolha uma de suas armas para ser a
+                        sua arma ideal (Arma de fogo ou arma
+                        branca), e essa arma vai passar a possuir
+                        um bônus em seu dano de +2 e adquire
+                        Porte em Equipamentos Pesados.
+
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-cyan-300">Braço Cibernético <b>(Ataque Principal)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Com uma ação de movimento, Pierre faz um Teste (2#1d20+Mente) para arremessar de seu braço um
+                        tiro explosivo e inteligente contra exclusivamente a reação de Defender do alvo, caso acerte
+                        causa dano de fogo (1d6+Ódio).
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-green-300">Sistema de Reparação</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Pierre tem sistemas que estão constantemente se reparando e melhorando, ele não precisa
+                        descansar, comer ou sequer respirar, e além disso, ganha +5PVs máximos por conta dessa
+                        habilidade.
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-cyan-300">Reator de Energia</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Com uma ação completa, você solta um pulso energético do peito, e faz todos os dispositivos em
+                        alcance pessoal, incluindo os seus e os de aliados, adquirirem um Impulso Energético, que faz
+                        com que todos os dispositivos afetados (que causam dano), ganhem um aumento em seu dano, de +2d4
+                        de dano Elétrico.
+                        Após usar esse Talento, ele vai durar por 1d8 rodadas, e enquanto ele durar, você ganha 5 Pontos
+                        de Resistência a dano Elétrico,
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-blue-300">Adaptado</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Durante uma quantidade de
+                        vezes por Capítulo igual a metade de sua
+                        Mente, você pode alterar o atributo usado
+                        para um teste.
+                    </p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div>
+            <h2 class="font-epic text-xl text-cyan-400 mb-3">Proezas</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-green-300">Baixando Latência <b>(2PD)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Ataque Crítico: Aumenta todos os seus danos em +1d4 por 1d4 rodadas;
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-green-300">Limpando o Cache <b>(2PD)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Ataque Crítico: Aumenta todos os seus danos em +1d4 por 1d4 rodadas;
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-green-300">Aprendiz do Maioral <b>(2PD)</b></h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Ataque Crítico: Aumenta todos os seus danos em +1d4 por 1d4 rodadas;
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-epic text-xl text-cyan-400 mb-3">Especializações</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-cyan-300">Lista de Especializações</h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        <b>Intimidação:</b> Nível 3<br>
+                        <b>Fortitude:</b> Nível 3<br>
+                        <b>Tecnologia:</b> Nível 3<br>
+                        <b>Ciência:</b> Nível 3<br>
+                        <b>Medicina:</b> Nível 3<br>
+                        <b>História:</b> Nível 3<br>
+                        <b>Armamento (Armas de Fogo):</b> Nível 3<br>
+                        <b>Investigação:</b> Nível 3
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-epic text-xl text-red-400 mb-3">Defeitos</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-red-300">Conduta da Lealdade</h3>
+                </div>
+
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-red-300">Conduta da Vingança</h3>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-epic text-xl text-cyan-400 mb-3">Poderes</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl skill-card glow-hover">
+                    <h3 class="text-blue-300">Corpo Cibernético</h3>
+                    <p class="skill-desc text-sm text-gray-400">
+                        Você é parte máquina e parte humano, sua parte humana ainda faz você ser afetado por doenças e
+                        venenos e ainda precisar comer, beber e respirar, mas mesmo assim, é praticamente impossível
+                        você ficar cansado, se tornando imune a Fadiga, e além disso, você possui um espaço para
+                        Componente em seu corpo, como se você fosse um dispositivo.
+                        Seu corpo pesado não lhe deixa ter total sinergia com alguma armadura ou traje especial, sempre
+                        que usar uma armadura, para evitar o desgaste, ela vai fornecer metade da resistência que
+                        forneceria.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= EQUIPAMENTOS & INFORMAÇÕES ================= -->
+    <section class="max-w-6xl mx-auto mt-14 grid md:grid-cols-2 gap-8">
+
+        <!-- EQUIPAMENTOS -->
+        <div>
+            <h2 class="font-epic text-xl text-blue-400 mb-3">Equipamentos e Dispositivos</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl glow-hover">
+                    <p class="text-blue-300 font-semibold">Dispositivo 1</p>
+                    <p class="text-sm text-gray-400 mt-1">
+                        ...
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl glow-hover">
+                    <p class="text-blue-300 font-semibold">Dispositivo 2</p>
+                    <p class="text-sm text-gray-400 mt-1">
+                        ...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFORMAÇÕES ADICIONAIS -->
+        <div>
+            <h2 class="font-epic text-xl text-blue-400 mb-3">Informações Adicionais</h2>
+            <div class="space-y-3">
+                <div class="glass p-4 rounded-xl glow-hover">
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        <b>Merlin</b> é o nome do procurado que destruiu sua vila por pura curiosidade, é um membro de
+                        alto escalão da <b>Conclave</b>, uma organização de Procurados que matam qualquer um pelo preço
+                        certo, quando Lee chegou no local do incidente, Merlin já não estava mais lá, mas Lee nunca
+                        desistiu de investigar e tentar ao máximo ajudar Pierre.
+                    </p>
+                </div>
+
+                <div class="glass p-4 rounded-xl glow-hover">
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Pierre se enxerga como um soldado, Lee permite que os agentes, por serem novos, saírem pra se
+                        divertir, mas Pierre se recusa, ele é extremamente focado, a ponto de se auto-castrar
+                        cibernéticamente. Exterminar os super seres desse mundo é o mais importante.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <!-- ================= LOGO NO RODAPÉ ================= -->
+    <div class="mt-16 flex justify-center items-center opacity-80">
+        <img src="images/logo.png" alt="Logo do Sistema" class="h-20 object-contain">
+    </div>
+
+
+    <script>
+        function alt(id, v) {
+            const el = document.getElementById(id);
+            el.innerText = Math.max(0, parseInt(el.innerText) + v);
+        }
+    </script>
+
+    <div id="page-transition">
+        <div class="loader"></div>
+    </div>
+    <!-- SCRIPT SEMPRE NO FINAL -->
+    <script src="./transition.js"></script>
+
+</body>
+
+</html>
